@@ -1,5 +1,7 @@
 # todo-tracker
 
+[![GitHub release](https://img.shields.io/github/release/story-branch/todo-tracker.svg)](https://github.com/story-branch/todo-tracker/releases)
+
 Searches the code for TODOs and creates issues in the configured tracker
 
 This is the initial description of the concept and it will probably evolve with
