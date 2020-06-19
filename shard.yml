@@ -1,0 +1,11 @@
+name: todo-tracker
+version: 0.0.1
+description: |
+  a tool to track and manage your notes and todos in a path
+
+authors:
+  - Rui Baltazar <rui.p.baltazar@gmail.com>
+
+crystal: 0.35.0
+
+license: MIT
