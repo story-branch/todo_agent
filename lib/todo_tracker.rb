@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'byebug'
+
 require_relative "todo_tracker/version"
 require_relative "todo_tracker/file_identifier"
 require_relative "todo_tracker/parsers/ruby"
