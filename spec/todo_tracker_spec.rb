@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe TodoTracker do
   it "has a version number" do
     expect(TodoTracker::VERSION).not_to be nil

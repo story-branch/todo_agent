@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "todo_tracker/version"
 
 module TodoTracker
