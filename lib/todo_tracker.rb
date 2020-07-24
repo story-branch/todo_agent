@@ -13,7 +13,6 @@ module TodoTracker
     comments = []
     Dir.glob("#{path}/**/*").each do |filepath|
       parser = TodoTracker::FileIdentifier.based_on_file_extension(filepath)
-      puts "#{filepath} Not yet supported" unless parser
       next unless parser
 
       parser_class = Object.const_get("TodoTracker::Parsers::#{parser}")
@@ -21,7 +20,15 @@ module TodoTracker
       comments += result
     end
 
-    puts comments
+    output(comments)
     nil
+  end
+
+  def self.output(comments, output_file = "todo_tracker.log")
+    File.open(output_file, "w") do |f|
+      comments.each do |comment|
+        f.write "#{comment}\n"
+      end
+    end
   end
 end
