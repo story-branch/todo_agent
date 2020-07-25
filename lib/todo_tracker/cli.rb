@@ -17,5 +17,19 @@ module TodoTracker
       puts "v#{TodoTracker::VERSION}"
     end
     map %w[--version -v] => :version
+
+    desc "analyze", "Command description..."
+    method_option :help, aliases: "-h", type: :boolean, desc: "Display usage information"
+    method_option :ignore_paths, aliases: "-I", type: :array, desc: "Paths to ignore while searching for keywords"
+    method_option :output_file, aliases: "-o", type: :string, desc: "File to log the output"
+
+    def analyze(path)
+      if options[:help]
+        invoke :help, ["analyze"]
+      else
+        require_relative "commands/analyze"
+        TodoTracker::Commands::Analyze.new(path, options).execute
+      end
+    end
   end
 end
