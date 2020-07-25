@@ -18,12 +18,12 @@ module TodoTracker
     end
     map %w[--version -v] => :version
 
-    desc "analyze", "Command description..."
+    desc "analyze PATH", "Runs through the tree from the passed path, searching for configured keywords and builds a log"
     method_option :help, aliases: "-h", type: :boolean, desc: "Display usage information"
     method_option :ignore_paths, aliases: "-I", type: :array, desc: "Paths to ignore while searching for keywords"
     method_option :output_file, aliases: "-o", type: :string, desc: "File to log the output"
 
-    def analyze(path)
+    def analyze(path = ".")
       if options[:help]
         invoke :help, ["analyze"]
       else

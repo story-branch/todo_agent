@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require 'byebug'
-
-require 'rake'
+require "rake"
 require_relative "../command"
 require_relative "../file_identifier"
 # TODO: load remaining parsers
@@ -16,7 +14,7 @@ module TodoTracker
         @options = options
       end
 
-      def execute(input: $stdin, output: $stdout)
+      def execute(_input: $stdin, _output: $stdout)
         comments = []
         Rake::FileList["#{@path}/**/*"].exclude(paths_to_ignore).each do |filepath|
           parser = TodoTracker::FileIdentifier.based_on_file_extension(filepath)
