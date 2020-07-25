@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/todo_tracker/version"
+require_relative "lib/todo_agent/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "todo_tracker"
-  spec.version       = TodoTracker::VERSION
+  spec.name          = "todo_agent"
+  spec.version       = TodoAgent::VERSION
   spec.authors       = ["Rui Baltazar"]
   spec.email         = ["rui.p.baltazar@gmail.com"]
 

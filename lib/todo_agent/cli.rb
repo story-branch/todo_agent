@@ -2,7 +2,7 @@
 
 require "thor"
 
-module TodoTracker
+module TodoAgent
   # Handle the application command line parsing
   # and the dispatch to various command objects
   #
@@ -11,10 +11,10 @@ module TodoTracker
     # Error raised by this runner
     Error = Class.new(StandardError)
 
-    desc "version", "todo_tracker version"
+    desc "version", "todo_agent version"
     def version
       require_relative "version"
-      puts "v#{TodoTracker::VERSION}"
+      puts "v#{TodoAgent::VERSION}"
     end
     map %w[--version -v] => :version
 
@@ -28,7 +28,7 @@ module TodoTracker
         invoke :help, ["analyze"]
       else
         require_relative "commands/analyze"
-        TodoTracker::Commands::Analyze.new(path, options).execute
+        TodoAgent::Commands::Analyze.new(path, options).execute
       end
     end
   end

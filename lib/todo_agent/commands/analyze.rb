@@ -6,9 +6,9 @@ require_relative "../file_identifier"
 # TODO: load remaining parsers
 require_relative "../parsers/ruby"
 
-module TodoTracker
+module TodoAgent
   module Commands
-    class Analyze < TodoTracker::Command
+    class Analyze < TodoAgent::Command
       def initialize(path, options)
         @path = path
         @options = options
@@ -17,10 +17,10 @@ module TodoTracker
       def execute(_input: $stdin, _output: $stdout)
         comments = []
         Rake::FileList["#{@path}/**/*"].exclude(paths_to_ignore).each do |filepath|
-          parser = TodoTracker::FileIdentifier.based_on_file_extension(filepath)
+          parser = TodoAgent::FileIdentifier.based_on_file_extension(filepath)
           next unless parser
 
-          parser_class = Object.const_get("TodoTracker::Parsers::#{parser}")
+          parser_class = Object.const_get("TodoAgent::Parsers::#{parser}")
           result = parser_class.parse(filepath)
           comments += result
         end
@@ -50,7 +50,7 @@ module TodoTracker
       end
 
       def output_file
-        @options["output_file"] || "todo_tracker.log"
+        @options["output_file"] || "todo_agent.log"
       end
     end
   end

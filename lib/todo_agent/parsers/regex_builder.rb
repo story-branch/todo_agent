@@ -2,7 +2,7 @@
 
 require_relative "default_tags"
 
-module TodoTracker
+module TodoAgent
   module Parsers
     class RegexBuilder
       DEFAULT_TAGS = [DefaultTags.todo, DefaultTags.fixme].freeze

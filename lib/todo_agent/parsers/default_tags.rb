@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module TodoTracker
+module TodoAgent
   module Parsers
     class DefaultTags
       # TODO: read from config or fallback to defaults

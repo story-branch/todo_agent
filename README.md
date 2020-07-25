@@ -1,4 +1,4 @@
-# TodoTracker
+# TodoAgent
 
 Searches the code for TODOs and creates issues in the configured tracker
 
@@ -13,7 +13,7 @@ Might be interesting to extract some of the features from story_branch gem to a 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'todo_tracker'
+gem 'todo_agent'
 ```
 
 And then execute:
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install todo_tracker
+    $ gem install todo_agent
 
 ## Usage
 
@@ -36,7 +36,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/rpbaltazar/todo_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/rpbaltazar/todo_tracker/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/rpbaltazar/todo_agent. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/rpbaltazar/todo_agent/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## License
@@ -45,4 +45,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the TodoTracker project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/rpbaltazar/todo_tracker/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the TodoAgent project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/rpbaltazar/todo_agent/blob/master/CODE_OF_CONDUCT.md).

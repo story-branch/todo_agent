@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module TodoTracker
+module TodoAgent
   class FileIdentifier
     def self.based_on_file_extension(filename)
       supported_files = {

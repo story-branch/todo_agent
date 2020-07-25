@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe TodoTracker do
+RSpec.describe TodoAgent do
   it "has a version number" do
-    expect(TodoTracker::VERSION).not_to be nil
+    expect(TodoAgent::VERSION).not_to be nil
   end
 
   it "does something useful" do

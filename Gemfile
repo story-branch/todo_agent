@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in todo_tracker.gemspec
+# Specify your gem's dependencies in todo_agent.gemspec
 gemspec
 
 gem "byebug"

@@ -2,7 +2,7 @@
 
 require 'forwardable'
 
-module TodoTracker
+module TodoAgent
   class Command
     extend Forwardable
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module TodoTracker
+module TodoAgent
   class Comment
     attr_reader :line, :filename
 
