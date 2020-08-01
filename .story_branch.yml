@@ -1,5 +1,5 @@
 ---
 tracker: github
 project_id:
-- story-branch/todo-tracker
+- story-branch/todo_agent
 issue_placement: beginning
