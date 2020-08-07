@@ -4,13 +4,17 @@ require "English"
 require_relative "regex_builder"
 require_relative "../comment"
 
+require 'byebug'
+
 module TodoAgent
   module Parsers
     class Ruby
       def self.parse(file)
         regex_str = TodoAgent::Parsers::RegexBuilder.regex
-        regexp = Regexp.new("^\\s*##{regex_str}$", "mig")
+        regexp = Regexp.new("^\\s*##{regex_str}$", Regexp::IGNORECASE | Regexp::MULTILINE)
         comments = []
+
+        Kernel.byebug
 
         # TODO: This logic belongs out of the specific ruby parser
         # This only matches single line.
