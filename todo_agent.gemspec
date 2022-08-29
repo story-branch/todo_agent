@@ -10,15 +10,17 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Transform tags into tickets"
   spec.description   = "Search for specific keywords in the codebase and create tickets in the tracker"
-  spec.homepage      = "https://github.com/story-branch/todo-tracker"
+  spec.homepage      = "https://github.com/story-branch/todo_agent"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/story-branch/todo-tracker"
-  spec.metadata["changelog_uri"] = "https://github.com/story-branch/todo-tracker"
+  spec.metadata = {
+    "bug_tracker_uri" => "https://github.com/story-branch/todo_agent/issues",
+    "changelog_uri" => "https://github.com/story-branch/todo_agent/blob/master/Changelog.md",
+    "documentation_uri" => "https://github.com/story-branch/todo_agent/blob/master/README.md",
+    "source_code_uri" => "https://github.com/story-branch/todo_agent",
+    "homepage_uri" => spec.homepage
+  }
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -28,4 +30,8 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "minitest", "~> 5.16"
+  spec.add_development_dependency "minitest-reporters", "~> 1.5"
+  spec.add_development_dependency "standard", "~> 1.15"
 end
