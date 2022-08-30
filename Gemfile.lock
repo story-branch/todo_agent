@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    todo_agent (0.1.0)
+    todo_agent (0.1.1)
       rake (~> 13.0)
+      tty-command (~> 0.10)
 
 GEM
   remote: https://rubygems.org/
@@ -20,6 +21,8 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.5.0)
@@ -43,6 +46,9 @@ GEM
     standard (1.15.0)
       rubocop (= 1.33.0)
       rubocop-performance (= 1.14.3)
+    tty-color (0.6.0)
+    tty-command (0.10.1)
+      pastel (~> 0.8)
     unicode-display_width (2.2.0)
 
 PLATFORMS

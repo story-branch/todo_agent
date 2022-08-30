@@ -2,11 +2,10 @@
 
 require "rake"
 require_relative "../command"
-require_relative "../comment_finder"
 
 module TodoAgent
   module Commands
-    class Analyze < TodoAgent::Command
+    class Report < TodoAgent::Command
       def initialize(path, options)
         @path = path
         @options = options
@@ -15,7 +14,7 @@ module TodoAgent
 
       def execute(_input: $stdin, _output: $stdout)
         comments = TodoAgent::CommentFinder.new(path: path, paths_to_ignore: paths_to_ignore).run
-        append_to_output(comments)
+        report_comments(comments)
       end
 
       private
@@ -30,16 +29,10 @@ module TodoAgent
         end
       end
 
-      def append_to_output(comments)
-        File.open(output_file_name, "a") do |f|
-          comments.each do |comment|
-            f.write "#{comment}\n"
-          end
+      def report_comments(comments)
+        comments.each do |comment|
+          p "Reporting" unless comment.tracked?
         end
-      end
-
-      def output_file_name
-        @output_file_name ||= @options["output_file"] || "todo_agent_#{@run_ts}.log"
       end
     end
   end

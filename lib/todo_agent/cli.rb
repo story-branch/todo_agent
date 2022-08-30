@@ -31,5 +31,14 @@ module TodoAgent
         TodoAgent::Commands::Analyze.new(path, options).execute
       end
     end
+
+    desc "report PATH", "Runs through the tree from the passed path and for each annotated block that does not have a ticket, creates one in the configured project"
+    method_option :iterative, aliases: "-i", type: :boolean, desc: "For each annotated block asks which project to report to"
+    method_option :diff, aliases: "--diff", type: :boolean, desc: "Runs report only on the touched files in comparison with main branch"
+
+    def report(path = ".")
+      require_relative "commands/report"
+      TodoAgent::Commands::Report.new(path, options).execute
+    end
   end
 end
