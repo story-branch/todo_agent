@@ -9,7 +9,7 @@ module TodoAgent
     class Ruby
       def self.parse(file)
         regex_str = TodoAgent::Parsers::RegexBuilder.regex
-        regexp = Regexp.new("^\\s*##{regex_str}$", "mig")
+        regexp = Regexp.new("^\\s*##{regex_str}$", Regexp::MULTILINE | Regexp::IGNORECASE)
         comments = []
 
         # TODO: This logic belongs out of the specific ruby parser
