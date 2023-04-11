@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    todo_agent (0.1.0)
+    todo_agent (0.1.1)
 
 GEM
   remote: https://rubygems.org/
