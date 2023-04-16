@@ -10,6 +10,9 @@ jobs:
         uses: story-branch/tech-debt-action@fb300bb3d88694632cd9d1a4226973c8b24fe27d
         with:
           tech-debt-token: 'Mona-the-Octocat'
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.created-tickets }}"
