@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  tech_debt_todo_finder:
+    runs-on: ubuntu-latest
+    name: Run the tech debt action to find ToDo in diffs and create tickets for them
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: story-branch/tech-debt-action@fb300bb
+        with:
+          tech-debt-token: 'Mona-the-Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.created-tickets }}"
