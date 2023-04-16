@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: story-branch/tech-debt-action@fb300bb
+        uses: story-branch/tech-debt-action@fb300bb3d88694632cd9d1a4226973c8b24fe27d
         with:
           tech-debt-token: 'Mona-the-Octocat'
       # Use the output from the `hello` step
