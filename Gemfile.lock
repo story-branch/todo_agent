@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     todo_agent (0.1.1)
+      thor (~> 1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -41,6 +42,7 @@ GEM
     standard (1.15.0)
       rubocop (= 1.33.0)
       rubocop-performance (= 1.14.3)
+    thor (1.2.1)
     unicode-display_width (2.2.0)
 
 PLATFORMS

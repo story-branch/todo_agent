@@ -1,0 +1,23 @@
+on: [push]
+
+jobs:
+  tech_debt_todo_finder:
+    runs-on: ubuntu-latest
+    name: Run the tech debt action to find ToDo in diffs and create tickets for them
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: 'story-branch/tech-debt-action'
+          ref: '59d9e06f187195f1eda9d5817c8cf723917fa4a3'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Hello world action step
+        id: hello
+        uses: story-branch/tech-debt-action@59d9e06f187195f1eda9d5817c8cf723917fa4a3
+        with:
+          tech-debt-token: 'Mona-the-Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.created-tickets }}"
